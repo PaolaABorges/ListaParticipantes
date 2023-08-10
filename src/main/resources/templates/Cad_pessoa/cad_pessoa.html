@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th=http:"//www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -22,6 +22,7 @@
 </head>
 <body>
 <div style="margin-top: 10%" class="container">
+    <div th:if="${mensagem}" th:utext="${mensagem}"></div>
     <h1 class="text-center">Cadastro</h1>
 
     <form action="/cadastro" method="post">
@@ -53,31 +54,32 @@
                    aria-describedby="sp_email">
         </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="sp_senha"><i class="fa-solid fa-key"></i></span>
-                        <input name="senha" id="senha" type="password" class="form-control" placeholder="Senha"
-                               aria-label="senha"
-                               aria-describedby="sp_senha">
-                    </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="sp_senha"><i class="fa-solid fa-key"></i></span>
+                    <input name="senha" id="senha" type="password" class="form-control" placeholder="Senha"
+                           aria-label="senha"
+                           aria-describedby="sp_senha">
                 </div>
-                <div class="col-sm-6">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="sp_confsenha"><i class="fa-solid fa-key"></i></span>
-                        <input name="confsenha" id="confsenha" type="password" class="form-control" placeholder="Confirme a senha"
-                               aria-label="sp_confsenha"
-                               aria-describedby="senha">
-                    </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="sp_confsenha"><i class="fa-solid fa-key"></i></span>
+                    <input name="confsenha" id="confsenha" type="password" class="form-control"
+                           placeholder="Confirme a senha"
+                           aria-label="sp_confsenha"
+                           aria-describedby="senha">
                 </div>
-                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-6">
                 <input value="Cadastrar" type="submit" class="btn btn-primary">
             </div>
-<!--                    <div class="col-sm-12 text-right">-->
-<!--                       <span class="btn btn-success">Cadastre-se</span>-->
-<!--                    </div>-->
+            <!--                    <div class="col-sm-12 text-right">-->
+            <!--                       <span class="btn btn-success">Cadastre-se</span>-->
+            <!--                    </div>-->
         </div>
     </form>
 </div>
